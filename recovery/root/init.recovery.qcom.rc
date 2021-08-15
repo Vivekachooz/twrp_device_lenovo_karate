@@ -4,6 +4,12 @@ on init
     chmod 0664 /dev/ion
     chown system system /dev/ion
 
+on boot
+    # Double tap to wake
+    chown system system /sys/class/input/input1/device/wake_gesture
+    chmod 0664 /sys/class/input/input1/device/wake_gesture
+    write /sys/class/input/input1/device/wake_gesture 1
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
