@@ -53,6 +53,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Hack: prevent anti rollback
+PLATFORM_SECURITY_PATCH := 2099-12-31
+
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1
