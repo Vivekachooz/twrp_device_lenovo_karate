@@ -10,6 +10,9 @@ $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=msm8937
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := karate
 PRODUCT_NAME := omni_karate
